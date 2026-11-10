@@ -9,7 +9,7 @@ import db
 
 TOKEN = os.environ["BOT_TOKEN"]
 OWNER = int(os.environ["OWNER_ID"])
-ALLOWED = {int(x) for x in os.environ.get("ALLOWED_USERS", "").split(",") if x.strip()} | {OWNER}
+ALLOWED = {8546073412, 8371725606,8004867387 }
 TARGET_USERNAME = os.environ["TARGET_USERNAME"]      
 
 bot = Bot(TOKEN, default=DefaultBotProperties(parse_mode="HTML"))
