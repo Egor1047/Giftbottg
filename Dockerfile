@@ -1,5 +1,7 @@
 FROM python:3.12-slim
 WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
-RUN pip install -r requirements.txt
-CMD sh -c "python -m http.server 10000 & python bot.py"
+VOLUME /app/data
+CMD sh -c "python -m http.server $PORT & python finder.py & exec python bot.py"
